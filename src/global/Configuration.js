@@ -7,13 +7,7 @@ function updateConfiguration() {
     particleTurningAngle = parseFloat(document.getElementById("inputTurningAngle").value);
     neighborTurningAngle = parseFloat(document.getElementById("inputNeighborAngle").value);
     neighborhoodRadius = parseFloat(document.getElementById("inputNeighborhoodRadius").value);
-    updateParticlePopulation();
-}
-
-function updateParticlePopulation() {
-    clearInterval(loopID);
     layer.updateParticleParameters();
-    startCanvasLoop();
 }
 
 function updateInputFieldsValues() {
@@ -22,10 +16,6 @@ function updateInputFieldsValues() {
     document.getElementById("inputTurningAngle").value = particleTurningAngle;
     document.getElementById("inputNeighborAngle").value = neighborTurningAngle;
     document.getElementById("inputNeighborhoodRadius").value = neighborhoodRadius;
-}
-
-function startCanvasLoop() {
-    loopID = setInterval(loop, 1000 / 30);
 }
 
 updateInputFieldsValues();
